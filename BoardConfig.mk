@@ -103,6 +103,9 @@ TARGET_ENABLE_MEDIADRM_64 := true
 # Display
 TARGET_SCREEN_DENSITY := 440
 
+# DT2W
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
