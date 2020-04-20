@@ -40,6 +40,9 @@ persist.vendor.camera.depurple=1
 vendor.camera.vidhanceEis.force=1
 vendor.vidhance.video.enabled=1
 
+# Charger
+ro.charger.enable_suspend=true
+
 # DPM
 persist.vendor.dpm.feature=1
 persist.vendor.dpm.loglevel=0
