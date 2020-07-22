@@ -92,12 +92,13 @@ on post-fs-data
     chmod 0777 /sys/module/migt/parameters/migt_thresh
     restorecon /sys/module/migt/parameters/migt_thresh
 
-# For cpusets initialize for Silver Only first and then Silver + Gold
-# Silver Only configuration cannot work with 0-7
 on boot
     chown system system /sys/kernel/hbtp/display_pwr
     start rmt_storage
     start rfs_access
+
+    # For cpusets initialize for Silver Only first and then Silver + Gold
+    # Silver Only configuration cannot work with 0-7
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/audio-app/cpus 1-2
     write /dev/cpuset/foreground/cpus 0-3
@@ -110,8 +111,8 @@ on boot
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
 
-# Add a cpuset for the camera daemon
-# We want all cores for camera
+    # Add a cpuset for the camera daemon
+    # We want all cores for camera
     mkdir /dev/cpuset/camera-daemon
     write /dev/cpuset/camera-daemon/cpus 0-7
     write /dev/cpuset/camera-daemon/mems 0
@@ -119,18 +120,18 @@ on boot
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
-# D2TW
+    # DT2W
     chown system system /proc/tp_gesture
     chmod 0660 /proc/tp_gesture
 
-# access permissions for FPC service
-   chown system system /sys/bus/platform/devices/soc/soc:fpc1020/irq
-   chown system system /sys/bus/platform/devices/soc/soc:fpc1020/wakeup_enable
+    # access permissions for FPC service
+    chown system system /sys/bus/platform/devices/soc/soc:fpc1020/irq
+    chown system system /sys/bus/platform/devices/soc/soc:fpc1020/wakeup_enable
 
-#Load WLAN driver
+    #Load WLAN driver
     insmod /vendor/lib/modules/qca_cld3_wlan.ko
 
-#USB controller configuration
+    #USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
     setprop vendor.usb.rmnet.func.name "gsi"
     setprop vendor.usb.rmnet.inst.name "rmnet"
