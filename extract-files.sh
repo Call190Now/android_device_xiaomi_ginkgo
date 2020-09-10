@@ -64,6 +64,12 @@ function blob_fixup() {
     vendor/etc/camera/ginkgo_s5kgm1_sunny*)
         sed -i -e 's/sunny_i/ofilm_ii/g' -e 's/sunny_india_i/ofilm_india_ii/g' "$2"
         ;;
+    product/lib64/libcutils-v29.so)
+        patchelf --set-soname libcutils-v29.so "$2"
+        ;;
+    product/lib64/libdpmframework.so)
+        patchelf --replace-needed libcutils.so libcutils-v29.so "$2"
+        ;;
     esac
 }
 
