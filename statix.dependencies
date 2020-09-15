@@ -8,10 +8,5 @@
     "repository": "StatiXOS/android_vendor_xiaomi",
     "target_path": "vendor/xiaomi",
     "branch": "10"
-  },
-  {
-    "repository": "trinket-devs/vendor_miuicamera",
-    "target_path": "vendor/miuicamera",
-    "branch": "10.0"
   }
 ]
