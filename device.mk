@@ -322,8 +322,7 @@ PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
 # Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service-qti
+$(call inherit-product, vendor/qcom/opensource/power/power-vendor-product.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/perf-profile0.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile0.conf \
