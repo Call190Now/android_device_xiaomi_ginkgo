@@ -18,12 +18,10 @@ import re
 
 def FullOTA_Assertions(info):
   input_zip = info.input_zip
-  AddTrustZoneAssertion(info, input_zip)
   return
 
 def IncrementalOTA_Assertions(info):
   input_zip = info.target_zip
-  AddTrustZoneAssertion(info, input_zip)
   return
 
 def FullOTA_InstallEnd(info):
@@ -34,16 +32,6 @@ def FullOTA_InstallEnd(info):
 def IncrementalOTA_InstallEnd(info):
   input_zip = info.target_zip
   OTA_InstallEnd(info, input_zip)
-  return
-
-def AddTrustZoneAssertion(info, input_zip):
-  android_info = input_zip.read("OTA/android-info.txt")
-  m = re.search(r'require\s+version-trustzone\s*=\s*(\S+)', android_info)
-  if m:
-    versions = m.group(1).split('|')
-    if len(versions) and '*' not in versions:
-      cmd = 'assert(ginkgo.verify_trustzone(' + ','.join(['"%s"' % tz for tz in versions]) + ') == "1");'
-      info.script.AppendExtra(cmd)
   return
 
 def AddImage(info, input_zip, basename, dest):
@@ -57,7 +45,4 @@ def AddImage(info, input_zip, basename, dest):
 def OTA_InstallEnd(info, input_zip):
   AddImage(info, input_zip, "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
   AddImage(info, input_zip, "dtbo.img", "/dev/block/bootdevice/by-name/dtbo")
-  info.script.Mount("/vendor")
-  info.script.AppendExtra('run_program("/sbin/sh", "/tmp/install/bin/hide_nfc_ginkgo.sh");')
-  info.script.Unmount("/vendor")
   return
