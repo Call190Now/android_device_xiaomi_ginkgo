@@ -1,2 +1,2 @@
-allow wcnss_service sysfs_net:dir search;
-allow wcnss_service vendor_shell_exec:file execute_no_trans;
+allow vendor_wcnss_service_exec sysfs_net:dir search;
+allow vendor_wcnss_service_exec vendor_shell_exec:file execute_no_trans;
