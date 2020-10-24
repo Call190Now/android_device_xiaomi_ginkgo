@@ -286,19 +286,14 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.ginkgo
 
 # Media
+$(call inherit-product, hardware/qcom-caf/sm8150/media/product.mk)
+
 PRODUCT_PACKAGES += \
-    libc2dcolorconvert \
-    libmm-omxcore \
     libOmxAacEnc \
     libOmxAmrEnc \
-    libOmxCore \
     libOmxEvrcEnc \
-    libOmxQcelp13Enc \
-    libOmxVdec \
-    libOmxVenc \
     libOmxG711Enc \
-    libplatformconfig \
-    libstagefrighthw \
+    libOmxQcelp13Enc \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
 
 PRODUCT_COPY_FILES += \
