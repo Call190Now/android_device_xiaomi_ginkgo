@@ -74,8 +74,8 @@
             <name>IDrmFactory</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.1::ICryptoFactory/wfdhdcp</fqname>
-        <fqname>@1.1::IDrmFactory/wfdhdcp</fqname>
+        <fqname>@1.3::ICryptoFactory/wfdhdcp</fqname>
+        <fqname>@1.3::IDrmFactory/wfdhdcp</fqname>
         <fqname>@1.3::ICryptoFactory/clearkey</fqname>
         <fqname>@1.2::ICryptoFactory/widevine</fqname>
         <fqname>@1.3::IDrmFactory/clearkey</fqname>
@@ -619,6 +619,15 @@
         <interface>
             <name>IServicetracker</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.sigma_miracast</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>Isigma_miracast</name>
+            <instance>sigmahal</instance>
         </interface>
     </hal>
     <hal format="hidl">
