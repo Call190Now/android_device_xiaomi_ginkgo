@@ -54,6 +54,9 @@ TARGET_KERNEL_CONFIG := vendor/ginkgo-perf_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := trinket
+TRINKET := trinket
+QCOM_BOARD_PLATFORMS := trinket
+MSM_VIDC_TARGET_LIST := trinket
 
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true

@@ -7,6 +7,9 @@
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/ginkgo/ginkgo-vendor.mk)
 
+# QCOM Targets
+$(call inherit-product, $(LOCAL_PATH)/utils.mk)
+
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # Boot animation
