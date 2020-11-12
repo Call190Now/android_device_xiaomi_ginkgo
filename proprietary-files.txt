@@ -1942,8 +1942,8 @@ vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
-# QTI Telephony - from DRG - QKQ1.190828.002
-product/framework/qti-telephony-common.jar|b4d187700f279cdbd40e74b4c3be4504f10d8b29
+# QTI Telephony - from LA.UM.9.11.r1-02100-NICOBAR.0
+-system_ext/framework/qti-telephony-common.jar|56bf0fb1a089ffe372d22f8aa1c7cdef866d92e1
 
 # Radio
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
