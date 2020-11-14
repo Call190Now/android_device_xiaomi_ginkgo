@@ -1891,6 +1891,13 @@ vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
 # Postprocessing
+product/etc/permissions/com.qti.snapdragon.sdk.display.xml|0bff16d681e75f203c1e11ff33afba82490e49b3
+-product/framework/com.qti.snapdragon.sdk.display.jar|d66820631a3ee4edff80e584f3976a3919f5e93a
+-system_ext/app/colorservice/colorservice.apk|cbca1e8275ad0a913c17e968639446b3428acc2a
+system_ext/lib/libsd_sdk_display.qti.so|7c6da97fd06796a2abedde8082c5935f545565d4
+system_ext/lib/libsdm-disp-apis.qti.so|13b28385c9398d8f75663a94d89aa1be03659f3e
+system_ext/lib64/libsd_sdk_display.qti.so|fef4f3b3f36063d6c709ed692d1ec01ccddcfcfe
+system_ext/lib64/libsdm-disp-apis.qti.so|58eef47e6617446fc4f30769d21fa82de233d613
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/ppd
 vendor/etc/init/vendor.display.color@1.0-service.rc
