@@ -3083,7 +3083,7 @@ case "$target" in
             echo 4 > /sys/devices/system/cpu/cpu4/core_ctl/task_thres
 
             # Setting b.L scheduler parameters
-            echo 85 > /proc/sys/kernel/sched_downmigrate
+            echo 75 > /proc/sys/kernel/sched_downmigrate
             echo 85 > /proc/sys/kernel/sched_upmigrate
             echo 85 > /proc/sys/kernel/sched_group_downmigrate
             echo 100 > /proc/sys/kernel/sched_group_upmigrate
@@ -3105,8 +3105,8 @@ case "$target" in
             echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl
             echo 500 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
             echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
-            echo 1420800 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq
-            echo 864000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+            echo 1612800 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq
+            echo 1017600 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
             # configure governor settings for big cluster
             echo "schedutil" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
@@ -3114,10 +3114,10 @@ case "$target" in
             echo 500 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us
             echo 20000 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us
             echo 1401600 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/hispeed_freq
-            echo 652800 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
+            echo 902400 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 
             # enable input boost
-            echo "0:1305600 4:1056000" > /sys/module/cpu_boost/parameters/input_boost_freq
+            echo "0:1305600 4:1401600" > /sys/module/cpu_boost/parameters/input_boost_freq
             echo 100 > /sys/module/cpu_boost/parameters/input_boost_ms
 
             echo 0 > /proc/sys/kernel/sched_walt_rotate_big_tasks
