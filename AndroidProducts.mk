@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/statix_ginkgo.mk
+    $(LOCAL_DIR)/bootleg_ginkgo.mk
 
 COMMON_LUNCH_CHOICES := \
-    statix_ginkgo-user \
-    statix_ginkgo-userdebug \
-    statix_ginkgo-eng
+    bootleg_ginkgo-user \
+    bootleg_ginkgo-userdebug \
+    bootleg_ginkgo-eng
