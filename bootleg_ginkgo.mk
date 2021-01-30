@@ -24,6 +24,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
 # Inherit some common Bootleggers stuff
+TARGET_BOOT_ANIMATION_RES := 1080
 $(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
 
 # Device identifier
@@ -33,8 +34,3 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-TARGET_USE_SINGLE_BOOTANIMATION := true
-TARGET_PICK_BOOTANIMATION := "9"
-BOOTLEGGERS_NOTCHED := true
-TARGET_BOOTLEG_ARCH := arm64
